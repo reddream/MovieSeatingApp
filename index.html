@@ -1,0 +1,53 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Movie Seating App</title>
+	<link rel="stylesheet" href="stylesheets/bootstrap.css">
+	<link rel="stylesheet" href="stylesheets/main.css">
+</head>
+<body>
+
+<div class="container">
+	<div id="numSeatsContainer">
+		<form class="form-inline">
+
+				<label for="numSeatsAdult">Adult</label>
+				<select name="numSeatsAdult" id="numSeatsAdult" class="form-control">
+					<option value="0">0</option>
+					<script type="text/x-handlebars-template" id="seatOptionTemplateAdult">    
+					<option value="{{id}}" {{getSeatId id}}>{{id}}</option>
+					</script>
+				</select>
+
+				<label for="numSeatsChild">Child</label>
+				<select name="numSeatsChild" id="numSeatsChild" class="form-control">
+					<option value="0">0</option>
+					<script type="text/x-handlebars-template" id="seatOptionTemplateChild">    
+					<option value="{{id}}">{{id}}</option>
+					</script>
+				</select>
+
+				<div class="seatTotal">
+					<script type="text/x-handlebars-template" id="seatTotalTemplate">
+					    
+					</script>
+					<label> total: </label><span id="totalSeats"></span>				
+				</div>
+
+		</form>
+	</div>
+	<div id="movieScreen">MOVIE SCREEN</div>
+	<aside class="seatRows"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span></aside>
+	<div class="seating-wrapper">
+		
+		<script type="text/x-handlebars-template" id="seatTemplate">
+		<div class="seat entypo-user {{#if wheelChair}}wheelChair{{/if}} {{#if wcCompanion}}wcCompanion{{/if}} {{#if taken}}taken{{/if}}"id="{{id}}"></div>
+		</script>
+
+	</div>
+	<aside class="seatRows"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span></aside>
+</div>
+
+<script src="js/libs/require.js" data-main="js/main"></script>
+</body>
+</html>
